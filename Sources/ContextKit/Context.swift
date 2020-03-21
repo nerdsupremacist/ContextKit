@@ -9,7 +9,7 @@ public struct Context {
     }
     
     public final class Key<T>: AnyKey {
-        override init() {
+        public override init() {
             super.init()
         }
     }
