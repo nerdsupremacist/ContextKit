@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CRuntime",
+        "repositoryURL": "https://github.com/nerdsupremacist/CRuntime.git",
+        "state": {
+          "branch": "master",
+          "revision": "1ad0c05e0d2bc83546df2c7883eb33dbc3678d4c",
+          "version": null
+        }
+      },
+      {
+        "package": "CwlDemangle",
+        "repositoryURL": "https://github.com/mattgallagher/CwlDemangle.git",
+        "state": {
+          "branch": "master",
+          "revision": "b268c08207d2990664605c49b2c71cbd0df3445b",
+          "version": null
+        }
+      },
+      {
+        "package": "GraphQL",
+        "repositoryURL": "https://github.com/nerdsupremacist/GraphQL.git",
+        "state": {
+          "branch": "master",
+          "revision": "d4213633506dfc766a7d8f343772052b1ecf847d",
+          "version": null
+        }
+      },
+      {
+        "package": "Runtime",
+        "repositoryURL": "https://github.com/nerdsupremacist/Runtime.git",
+        "state": {
+          "branch": "master",
+          "revision": "b365cfb86c24ad31ffbc5690e604dbc98a7417eb",
+          "version": null
+        }
+      },
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "a27a07719ca785bcaca019a5b9fe1814b981b4a2",
+          "version": "2.15.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
