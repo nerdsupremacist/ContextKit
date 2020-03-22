@@ -1,6 +1,7 @@
 
 import Foundation
 
+@dynamicMemberLookup
 public class MutableContext {
     var context: Context
 
