@@ -1,6 +1,7 @@
 
 import Foundation
 
+@dynamicMemberLookup
 public struct Context {
     public class AnyKey: NSObject {
         fileprivate override init() {
@@ -20,10 +21,19 @@ public struct Context {
         self.dictionary = dictionary
     }
     
-    public subscript<T>(key: Key<T>) -> T {
-        guard let value = dictionary[key] else { fatalError("Key not populated") }
+    public subscript<T>(key: Key<T>) -> T? {
+        guard let value = dictionary[key] else { return nil }
         guard let casted = value as? T else { fatalError("Value in key does not match type") }
         return casted
+    }
+
+    public func forced<T>(_ key: Key<T>) -> T {
+        guard let value = self[key] else { fatalError("Key not populated") }
+        return value
+    }
+
+    public subscript<T>(dynamicMember keyPath: KeyPath<ContextKeyPaths, Context.Key<T>>) -> T {
+        return forced(ContextKeyPaths.factory.key(for: keyPath))
     }
 }
 

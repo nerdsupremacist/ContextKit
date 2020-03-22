@@ -12,15 +12,12 @@ public class MutableContext {
         self.init(context: try Context(context: context))
     }
 
-    public subscript<T>(key: Context.Key<T>) -> T {
-        get {
-            return context[key]
-        }
-        set {
-            push {
-                key ~> newValue
-            }
-        }
+    public subscript<T>(key: Context.Key<T>) -> T? {
+        return context[key]
+    }
+
+    public subscript<T>(dynamicMember keyPath: KeyPath<ContextKeyPaths, Context.Key<T>>) -> T {
+        return context[dynamicMember: keyPath]
     }
 
     public func push(@ContextBuilder context: () throws -> ContextProtocol) rethrows {

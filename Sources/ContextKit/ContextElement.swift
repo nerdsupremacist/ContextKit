@@ -15,8 +15,12 @@ extension ContextElement {
 
 extension Context {
 
-    public subscript<T: ContextElement>(type: T.Type) -> T {
+    public subscript<T: ContextElement>(type: T.Type) -> T? {
         return self[type.key]
+    }
+
+    public func forced<T: ContextElement>(for type: T.Type = T.self) -> T {
+        return forced(type.key)
     }
 
 }
